@@ -11,6 +11,13 @@ h1, h2 {
 .bar {
     fill: orange;
 }
+
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+
 text { 
     font: 10px sans-serif;	
 }
