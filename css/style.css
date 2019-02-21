@@ -1,0 +1,30 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Libre Baskerville,serif;
+    color:#595955
+}
+h1, h2 {
+    font-family: Arial,sans-serif;
+    text-transform: uppercase;
+}
+.bar {
+    fill: orange;
+}
+text { 
+    font: 10px sans-serif;	
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.d3-tip {
+  line-height: 1;
+  font: 10px sans-serif;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
