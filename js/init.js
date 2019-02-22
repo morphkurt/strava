@@ -6,6 +6,7 @@ function loadData() {
   		weeklyData=json;
   		renderWeeklyLoadGraph(weeklyData);
   		renderWeeklyPerformanceGraph(weeklyData);
+  		renderWeeklyPerformanceSpeedGraph(weeklyData);
 	});
 }
 
