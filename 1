@@ -18,15 +18,14 @@ function renderWeeklyLoadGraph(data,fdow){
       d._id.fdow = parseTime(d._id.fdow);
       d.pace=parseTimePace(d.avgSpeedTime);
   });
-   
-  var x = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
-  var y = d3.scaleLinear()
-    .range([height, 0]);
-  
   x.domain(fdow.map(function(d){
 	return parseTimeSeconds((d/1000)-(3600*24));
   }));
 
+ 
+  var x = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
+  var y = d3.scaleLinear()
+    .range([height, 0]);
 
 
   var xAxis = d3.axisBottom(x)
@@ -99,14 +98,14 @@ function renderWeeklyPerformanceSpeedGraph(data,fdow){
   var parseTimeSeconds = d3.timeParse('%s');
   var parseTimePace = d3.timeParse('%M:%S');
 
-   
-  var x = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
-  var y = d3.scaleLinear()
-    .range([height, 0]);
   x.domain(fdow.map(function(d){
 	return parseTimeSeconds((d/1000)-(3600*24));
   }));
 
+ 
+  var x = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
+  var y = d3.scaleLinear()
+    .range([height, 0]);
 
 
   var y = d3.scaleTime()
@@ -128,7 +127,7 @@ function renderWeeklyPerformanceSpeedGraph(data,fdow){
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
  
-var dataval = ["07:30", "05:15"];
+var dataval = ["07:30", "05:30"];
 var specifier = "%M:%S";
 var parsedDataval = dataval.map(function(d) {
   return d3.timeParse(specifier)(d)
@@ -187,7 +186,7 @@ var parsedDataval = dataval.map(function(d) {
 
 }
 
-function renderWeeklyPerformanceGraph(data,fdow){
+function renderWeeklyPerformanceGraph(data){
   var margin = {
       top: 40,
       right: 40,
@@ -203,21 +202,13 @@ function renderWeeklyPerformanceGraph(data,fdow){
   //data.forEach(function(d) {
   //    d._id.fdow = parseTime(d._id.fdow);
   //});
-  var parseTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%LZ');
-  var parseTimeSeconds = d3.timeParse('%s');
-  var parseTimePace = d3.timeParse('%M:%S');
-
-   
-  var y = d3.scaleLinear()
-    .range([height, 0]);
-  x.domain(fdow.map(function(d){
-	return parseTimeSeconds((d/1000)-(3600*24));
-  }));
-
-
+  
   var y = d3.scaleLinear()
     .range([height, 0]);
   
+  x.domain(data.map(function(d) {
+    return d._id.fdow;
+  }));
   
   var xAxis = d3.axisBottom(x)
   .tickFormat(d3.timeFormat("%b %Y"))
