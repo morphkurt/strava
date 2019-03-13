@@ -24,7 +24,7 @@ function renderWeeklyLoadGraph(data,fdow){
     .range([height, 0]);
   
   x.domain(fdow.map(function(d){
-	return parseTimeSeconds((d/1000)-(3600*24));
+	return parseTimeSeconds(d/1000);
   }));
 
 
@@ -103,8 +103,9 @@ function renderWeeklyPerformanceSpeedGraph(data,fdow){
   var x = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
   var y = d3.scaleLinear()
     .range([height, 0]);
+  
   x.domain(fdow.map(function(d){
-	return parseTimeSeconds((d/1000)-(3600*24));
+	return parseTimeSeconds(d/1000);
   }));
 
 
@@ -211,7 +212,7 @@ function renderWeeklyPerformanceGraph(data,fdow){
   var y = d3.scaleLinear()
     .range([height, 0]);
   x.domain(fdow.map(function(d){
-	return parseTimeSeconds((d/1000)-(3600*24));
+	return parseTimeSeconds(d/1000);
   }));
 
 

@@ -24,7 +24,7 @@ function createWeeklyData(){
 	startDate.setDate( endDate.getDate() - 365 );
 	let firstDayOfWeek = [] ;
 	for (let day = startDate;day <= endDate; day.setDate(day.getDate() + 7)) {
-	     firstDayOfWeek.push(new Date(day).setHours(0,0,0,0)); 
+	     firstDayOfWeek.push(getMonday(day).setHours(0,0,0,0)); 
 	}
 	//console.log(firstDayOfWeek);
 	return firstDayOfWeek;
