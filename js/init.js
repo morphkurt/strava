@@ -1,7 +1,7 @@
 
 
 function loadData() {
-	$.getJSON( "https://web.damitha.xyz/stravaapi/activities/run/weekly", function( json ) {
+	$.getJSON( "https://morphkurt-strava-api.herokuapp.com/stravaapi/activities/run/weekly", function( json ) {
   		let weeklyData=json;
 		let fdow = createWeeklyData();
   		renderWeeklyLoadGraph(weeklyData,fdow);
